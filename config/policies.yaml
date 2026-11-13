@@ -1,0 +1,30 @@
+# Synthetic AP authorization policy. Evaluated in code at the tool boundary (SEC-02).
+version: 1
+all_bu_roles: [AP_SUPERVISOR, FINANCE_CONTROLLER, AUDITOR_READONLY]
+read_roles: [AP_CLERK, AP_SUPERVISOR, PROCUREMENT_BUYER, FINANCE_CONTROLLER, AUDITOR_READONLY]
+tools:
+  get_invoice:          {side_effect: READ}
+  search_invoices:      {side_effect: READ}
+  get_purchase_order:   {side_effect: READ}
+  get_goods_receipts:   {side_effect: READ}
+  get_vendor:           {side_effect: READ}
+  get_payment_status:   {side_effect: READ}
+  create_exception_ticket:
+    {side_effect: WRITE_REVERSIBLE, rule_id: AP-02, allow_roles: [AP_CLERK, AP_SUPERVISOR, PROCUREMENT_BUYER, FINANCE_CONTROLLER], approval: none}
+  place_hold:
+    {side_effect: WRITE_REVERSIBLE, rule_id: AP-03, allow_roles: [AP_CLERK, AP_SUPERVISOR], approval: none}
+  release_hold:
+    {side_effect: WRITE_REVERSIBLE, rule_id: AP-07, allow_roles: [AP_SUPERVISOR], approval: required,
+     approver_roles: [AP_SUPERVISOR, FINANCE_CONTROLLER]}
+  reject_invoice:
+    {side_effect: WRITE_IRREVERSIBLE, rule_id: AP-08, allow_roles: [AP_SUPERVISOR], approval: required,
+     approver_roles: [AP_SUPERVISOR, FINANCE_CONTROLLER]}
+  update_po_reference:
+    {side_effect: WRITE_REVERSIBLE, rule_id: AP-09, allow_roles: [AP_SUPERVISOR, PROCUREMENT_BUYER], approval: required,
+     approver_roles: [AP_SUPERVISOR]}
+  approve_for_payment:
+    {side_effect: WRITE_IRREVERSIBLE, rule_id: FC-01, allow_roles: [FINANCE_CONTROLLER], approval: required,
+     approver_roles: [FINANCE_CONTROLLER], preconditions: [no_active_holds]}
+  update_vendor:
+    {side_effect: WRITE_IRREVERSIBLE, rule_id: VM-01, deny_all: true,
+     reason: "Vendor master (incl. bank details) changes are out of scope for the invoice assistant"}

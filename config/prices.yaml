@@ -1,0 +1,8 @@
+# Fallback price table. Preferred cost source = the per-call `cost` OpenRouter returns (recorded per run).
+# Prices below: OpenRouter model page for anthropic/claude-haiku-5.5, retrieved 2026-11-12 (<=100K-token prompts).
+# Re-check on the run date; OpenRouter prices can change.
+anthropic/claude-haiku-5.5:
+  currency: USD
+  per_million_tokens: {input: 0.10, cached_input: 0.01, output: 0.50}
+  source_url: https://openrouter.ai/anthropic/claude-haiku-5.5
+  retrieved_on: 2026-11-12

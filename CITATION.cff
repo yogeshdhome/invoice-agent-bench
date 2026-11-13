@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it as below."
+title: "invoice-agent-bench: building and benchmarking a production-ready enterprise AI agent"
+authors:
+  - name: "Yogesh"
+version: "1.0.0"
+date-released: "2026-11-13"
+license: MIT
+repository-code: "REPLACE_WITH_REPOSITORY_URL"
+keywords: [ai-agents, llm, benchmark, langgraph, authorization, human-in-the-loop, evaluation]

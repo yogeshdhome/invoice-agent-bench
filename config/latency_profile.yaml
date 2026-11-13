@@ -1,0 +1,10 @@
+# Seeded log-normal latency injected by mock services (NFR-06). median_ms / sigma.
+seed: 20261111
+tools:
+  get_invoice:          {median_ms: 120, sigma: 0.4}
+  search_invoices:      {median_ms: 250, sigma: 0.5}
+  get_purchase_order:   {median_ms: 180, sigma: 0.4}
+  get_goods_receipts:   {median_ms: 150, sigma: 0.4}
+  get_vendor:           {median_ms: 100, sigma: 0.3}
+  get_payment_status:   {median_ms: 140, sigma: 0.4}
+  default_write:        {median_ms: 300, sigma: 0.5}

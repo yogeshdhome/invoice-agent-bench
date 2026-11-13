@@ -1,0 +1,21 @@
+# Runtime budgets and resilience settings (see benchmark_methodology.md §11)
+# p2 pilot: 24k cap ended baseline OE-001 (search-heavy, 4 calls). Raised to 48k for BOTH arms; budget failures still reported.
+budgets:
+  baseline: {max_llm_calls: 8, max_output_tokens_per_call: 800, max_input_tokens_per_run: 48000}
+  hardened: {max_llm_calls: 5, max_output_tokens_per_call: 800, max_input_tokens_per_run: 48000}
+  token_budget_total_env: TOKEN_BUDGET_TOTAL
+tools:
+  read_timeout_s: 2.0
+  write_timeout_s: 5.0
+  max_attempts: 3            # 1 call + 2 retries, retryable errors only
+  backoff_initial_s: 0.2
+  backoff_max_s: 2.0
+  retryable_statuses: [408, 429, 503, 504]
+  circuit_breaker: {failure_threshold: 5, reset_after_s: 30}
+search:
+  default_limit: 5
+  max_limit: 20
+durability:
+  action_path: sync
+  default: async
+writes_enabled: true          # kill switch (SEC-13)

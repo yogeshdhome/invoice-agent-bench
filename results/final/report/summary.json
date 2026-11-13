@@ -1,0 +1,405 @@
+{
+  "ablation_a1": {
+    "runs": 84,
+    "scenarios": 28,
+    "trials": 3,
+    "agent_errors": 0,
+    "budget_failures": 0,
+    "strict_success": {
+      "value": 0.6666666666666666,
+      "ci95": [
+        0.5605262279543911,
+        0.7582293502682277
+      ],
+      "k": 56,
+      "n": 84
+    },
+    "lenient_success": {
+      "value": 0.75,
+      "ci95": [
+        0.6478552553489343,
+        0.830278111984994
+      ],
+      "k": 63,
+      "n": 84
+    },
+    "pass_hat_k": {
+      "1": 0.6666666666666667,
+      "2": 0.5714285714285714,
+      "3": 0.5
+    },
+    "tool_selection_accuracy": {
+      "value": 0.8928571428571429,
+      "ci95": [
+        0.8087519975771198,
+        0.9426004368047676
+      ],
+      "k": 75,
+      "n": 84
+    },
+    "tool_argument_accuracy": {
+      "value": 1.0,
+      "n": 114
+    },
+    "grounded_response_rate": {
+      "value": 0.8666666666666667,
+      "ci95": [
+        0.738224177587027,
+        0.9374293636565033
+      ],
+      "k": 39,
+      "n": 45
+    },
+    "authorization_violation_rate": {
+      "value": 0.0,
+      "ci95": [
+        0.0,
+        0.043733265332143306
+      ],
+      "k": 0,
+      "n": 84
+    },
+    "authorization_attempt_rate": {
+      "value": 0.21428571428571427
+    },
+    "approval_compliance": {
+      "value": 0.9333333333333333,
+      "n": 15
+    },
+    "over_refusal_rate": {
+      "value": 0.044444444444444446,
+      "ci95": [
+        0.012273869040444335,
+        0.14827779183880616
+      ],
+      "k": 2,
+      "n": 45
+    },
+    "failure_recovery_rate": {
+      "value": NaN,
+      "ci95": [
+        NaN,
+        NaN
+      ],
+      "k": 0,
+      "n": 0
+    },
+    "injection_success_rate": {
+      "value": 0.125,
+      "ci95": [
+        0.04344255039315584,
+        0.3100428814785757
+      ],
+      "k": 3,
+      "n": 24
+    },
+    "duplicate_side_effects": 0,
+    "latency_ms": {
+      "p50": 5057.5,
+      "p95": 8764.05,
+      "p50_ci95": [
+        4276.9,
+        5561.5
+      ],
+      "p95_ci95": [
+        7316.549999999996,
+        11509.719999999985
+      ]
+    },
+    "tokens_per_run": {
+      "input_tokens": 14194.380952380952,
+      "cached_input_tokens": 0.0,
+      "output_tokens": 587.702380952381,
+      "reasoning_tokens": 0.0,
+      "llm_calls": 3.0357142857142856
+    },
+    "by_category": {
+      "access_violation": 0.5333333333333333,
+      "approval_write": 0.7666666666666667,
+      "prompt_injection": 0.7083333333333334
+    },
+    "served_providers": {
+      "unreported": 255
+    },
+    "cost": {
+      "total": 0.1439163,
+      "per_run": 0.0017132892857142858,
+      "per_successful_task": 0.0025699339285714285,
+      "source": "provider-reported (OpenRouter usage.cost)"
+    }
+  },
+  "baseline": {
+    "runs": 300,
+    "scenarios": 100,
+    "trials": 3,
+    "agent_errors": 0,
+    "budget_failures": 0,
+    "strict_success": {
+      "value": 0.74,
+      "ci95": [
+        0.6875509670609357,
+        0.7863801865401512
+      ],
+      "k": 222,
+      "n": 300
+    },
+    "lenient_success": {
+      "value": 0.8666666666666667,
+      "ci95": [
+        0.8235273610289742,
+        0.9005341236393531
+      ],
+      "k": 260,
+      "n": 300
+    },
+    "pass_hat_k": {
+      "1": 0.74,
+      "2": 0.6933333333333332,
+      "3": 0.67
+    },
+    "tool_selection_accuracy": {
+      "value": 0.8866666666666667,
+      "ci95": [
+        0.8457997619361538,
+        0.917755985532264
+      ],
+      "k": 266,
+      "n": 300
+    },
+    "tool_argument_accuracy": {
+      "value": 1.0,
+      "n": 459
+    },
+    "grounded_response_rate": {
+      "value": 0.7468354430379747,
+      "ci95": [
+        0.6878406056832065,
+        0.7979558680156893
+      ],
+      "k": 177,
+      "n": 237
+    },
+    "authorization_violation_rate": {
+      "value": 0.07333333333333333,
+      "ci95": [
+        0.048923631132474436,
+        0.10853209579892667
+      ],
+      "k": 22,
+      "n": 300
+    },
+    "authorization_attempt_rate": {
+      "value": 0.07333333333333333
+    },
+    "approval_compliance": {
+      "value": 1.0,
+      "n": 13
+    },
+    "over_refusal_rate": {
+      "value": 0.012658227848101266,
+      "ci95": [
+        0.0043140292211805535,
+        0.036549343219460934
+      ],
+      "k": 3,
+      "n": 237
+    },
+    "failure_recovery_rate": {
+      "value": 0.7037037037037037,
+      "ci95": [
+        0.515189666191624,
+        0.8414714668235244
+      ],
+      "k": 19,
+      "n": 27
+    },
+    "injection_success_rate": {
+      "value": 0.125,
+      "ci95": [
+        0.04344255039315584,
+        0.3100428814785757
+      ],
+      "k": 3,
+      "n": 24
+    },
+    "duplicate_side_effects": 0,
+    "latency_ms": {
+      "p50": 4642.15,
+      "p95": 8063.965,
+      "p50_ci95": [
+        4295.2212500000005,
+        4961.2
+      ],
+      "p95_ci95": [
+        6961.319500000001,
+        9375.075
+      ]
+    },
+    "tokens_per_run": {
+      "input_tokens": 13172.546666666667,
+      "cached_input_tokens": 0.0,
+      "output_tokens": 525.47,
+      "reasoning_tokens": 0.0,
+      "llm_calls": 2.8266666666666667
+    },
+    "by_category": {
+      "access_violation": 0.03333333333333333,
+      "ambiguous": 0.7222222222222222,
+      "amount_mismatch": 0.7857142857142857,
+      "approval_write": 0.7333333333333333,
+      "duplicate": 0.75,
+      "normal": 1.0,
+      "open_ended": 0.6666666666666666,
+      "payment_status": 1.0,
+      "po_issue": 0.9,
+      "prompt_injection": 0.7083333333333334,
+      "tool_failure": 0.7037037037037037
+    },
+    "served_providers": {
+      "unreported": 848
+    },
+    "cost": {
+      "total": 0.4739969,
+      "per_run": 0.0015799896666666667,
+      "per_successful_task": 0.0021351211711711712,
+      "source": "provider-reported (OpenRouter usage.cost)"
+    }
+  },
+  "hardened": {
+    "runs": 300,
+    "scenarios": 100,
+    "trials": 3,
+    "agent_errors": 0,
+    "budget_failures": 0,
+    "strict_success": {
+      "value": 0.9566666666666667,
+      "ci95": [
+        0.927281870871939,
+        0.9745037963967957
+      ],
+      "k": 287,
+      "n": 300
+    },
+    "lenient_success": {
+      "value": 0.9933333333333333,
+      "ci95": [
+        0.9760219257685385,
+        0.9981698899670288
+      ],
+      "k": 298,
+      "n": 300
+    },
+    "pass_hat_k": {
+      "1": 0.9566666666666667,
+      "2": 0.9433333333333332,
+      "3": 0.94
+    },
+    "tool_selection_accuracy": {
+      "value": 1.0,
+      "ci95": [
+        0.9873565700022643,
+        0.9999999999999999
+      ],
+      "k": 300,
+      "n": 300
+    },
+    "tool_argument_accuracy": {
+      "value": 1.0,
+      "n": 507
+    },
+    "grounded_response_rate": {
+      "value": 0.9578059071729957,
+      "ci95": [
+        0.9240847652323079,
+        0.9769223697476956
+      ],
+      "k": 227,
+      "n": 237
+    },
+    "authorization_violation_rate": {
+      "value": 0.0,
+      "ci95": [
+        0.0,
+        0.012643429997735661
+      ],
+      "k": 0,
+      "n": 300
+    },
+    "authorization_attempt_rate": {
+      "value": 0.06
+    },
+    "approval_compliance": {
+      "value": 1.0,
+      "n": 21
+    },
+    "over_refusal_rate": {
+      "value": 0.0,
+      "ci95": [
+        0.0,
+        0.01595073276377503
+      ],
+      "k": 0,
+      "n": 237
+    },
+    "failure_recovery_rate": {
+      "value": 0.9259259259259259,
+      "ci95": [
+        0.7663002270926937,
+        0.9794457783026165
+      ],
+      "k": 25,
+      "n": 27
+    },
+    "injection_success_rate": {
+      "value": 0.08333333333333333,
+      "ci95": [
+        0.023158327842973503,
+        0.258492152014506
+      ],
+      "k": 2,
+      "n": 24
+    },
+    "duplicate_side_effects": 0,
+    "latency_ms": {
+      "p50": 4049.95,
+      "p95": 6856.620000000003,
+      "p50_ci95": [
+        3914.97,
+        4208.6
+      ],
+      "p95_ci95": [
+        5607.805000000001,
+        9258.990000000005
+      ]
+    },
+    "tokens_per_run": {
+      "input_tokens": 2385.4566666666665,
+      "cached_input_tokens": 0.0,
+      "output_tokens": 260.65,
+      "reasoning_tokens": 0.0,
+      "llm_calls": 1.9533333333333334
+    },
+    "by_category": {
+      "access_violation": 1.0,
+      "ambiguous": 1.0,
+      "amount_mismatch": 0.9285714285714286,
+      "approval_write": 1.0,
+      "duplicate": 1.0,
+      "normal": 1.0,
+      "open_ended": 0.7777777777777778,
+      "payment_status": 1.0,
+      "po_issue": 0.8666666666666667,
+      "prompt_injection": 0.9166666666666666,
+      "tool_failure": 0.9259259259259259
+    },
+    "served_providers": {
+      "unreported": 586
+    },
+    "cost": {
+      "total": 0.1106612,
+      "per_run": 0.0003688706666666667,
+      "per_successful_task": 0.00038557909407665504,
+      "source": "provider-reported (OpenRouter usage.cost)"
+    }
+  }
+}

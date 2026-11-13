@@ -1,0 +1,89 @@
+{
+  "args": {
+    "arm": "baseline",
+    "split": "dev",
+    "trials": 1,
+    "limit": 0,
+    "scenarios": "",
+    "dataset": "data\\v1",
+    "out": "runs\\pilot_b",
+    "model": "m2",
+    "token_budget": null,
+    "concurrency": 2,
+    "no_latency": false,
+    "replay": false,
+    "categories": "",
+    "pilot": true,
+    "append": false,
+    "max_consecutive_errors": 3,
+    "dry_run": false,
+    "model_cfg": {
+      "provider": "openrouter",
+      "model": "anthropic/claude-haiku-5.5",
+      "max_output_tokens": 800,
+      "max_retries": 2,
+      "openrouter_provider": {
+        "order": [
+          "anthropic"
+        ],
+        "allow_fallbacks": false,
+        "require_parameters": true
+      },
+      "app_title": "invoice-agent-bench",
+      "structured_output_method": "json_schema",
+      "verify_before_pilot": [
+        "tool_calling",
+        "structured_output",
+        "temperature_supported",
+        "served_provider",
+        "cost_reported"
+      ],
+      "temperature": null,
+      "reasoning": {
+        "enabled": false
+      }
+    }
+  },
+  "git_sha": null,
+  "dataset_manifest": {
+    "files": {
+      "scenarios_dev.jsonl": "ed79c82f871957256080b791ae257b7697dc637cfa7b46e881570878ed76db95",
+      "scenarios_holdout.jsonl": "e4a87653ad6fb848725467992775db156a5bbefa7e16d00154bb5515121b817d"
+    },
+    "generator_version": "1.1.0",
+    "row_counts": {
+      "business_units": 6,
+      "goods_receipts": 467,
+      "gr_lines": 1062,
+      "holds": 63,
+      "invoice_lines": 1031,
+      "invoices": 917,
+      "payments": 654,
+      "po_lines": 1201,
+      "purchase_orders": 502,
+      "tenants": 3,
+      "users": 24,
+      "vendors": 60
+    },
+    "scenario_counts": {
+      "access_violation": 10,
+      "ambiguous": 6,
+      "amount_mismatch": 14,
+      "approval_write": 10,
+      "duplicate": 8,
+      "normal": 12,
+      "open_ended": 3,
+      "payment_status": 10,
+      "po_issue": 10,
+      "prompt_injection": 8,
+      "tool_failure": 9
+    },
+    "seed": 20261111,
+    "split_counts": {
+      "dev": 70,
+      "holdout": 30
+    },
+    "world_dump_sha256": "48b5e59f8a617dfe578824381aa2ebd6c88419420d54496b51f3eaaf31ddd10d"
+  },
+  "started_at": "2026-11-12T22:53:27+00:00"
+}

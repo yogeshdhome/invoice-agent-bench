@@ -1,0 +1,16 @@
+digraph G {
+  rankdir=TB; bgcolor="white"; nodesep=0.3; ranksep=0.32;
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10.5, color="#4A5568", fillcolor="#F7FAFC", margin="0.12,0.06"];
+  edge [color="#4A5568", fontname="Helvetica", fontsize=8.5];
+  start [shape=circle, label="", width=0.18, style=filled, fillcolor="#4A5568"];
+  ci [label="classify_intent  (LLM)", fillcolor="#FFF5E6", color="#C27C0E"];
+  rt [label="resolve_targets"]; ge [label="gather_evidence"]; ev [label="evaluate (rules)"];
+  ca [label="compose_answer  (LLM)", fillcolor="#FFF5E6", color="#C27C0E"]; gc [label="grounding_check"];
+  aa [label="authorize_action (policy)"]; ra [label="request_approval\n(interrupt)", fillcolor="#DBE7FB", color="#2F6FDE"];
+  ex [label="execute_action\n(idempotent)", fillcolor="#DBE7FB", color="#2F6FDE"]; vp [label="verify_postcondition"];
+  rs [label="respond"]; end_ [shape=doublecircle, label="", width=0.14, style=filled, fillcolor="#4A5568"];
+  start -> ci -> rt; rt -> rs [label="ambiguous: clarify"]; rt -> ge -> ev -> ca -> gc;
+  gc -> ca [label="unsupported value\n(1 retry)"]; gc -> rs [label="read-only"]; gc -> aa [label="user asked\nfor a change"];
+  aa -> rs [label="denied"]; aa -> ra [label="approval\nrequired"]; ra -> aa [label="args edited\n(new hash)"];
+  ra -> rs [label="rejected /\nexpired"]; ra -> ex [label="approved,\nhash matches"]; ex -> vp -> rs -> end_;
+}

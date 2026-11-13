@@ -1,0 +1,19 @@
+# Single small model (M2) via OpenRouter. Verify with `make check-model` before any paid run.
+m2:
+  provider: openrouter
+  model: anthropic/claude-haiku-5.5        # OpenRouter slug (Claude API id would be claude-haiku-5-5)
+  # Re-pilot 2026-11-12: pinned Anthropic endpoint does not list `temperature` (Claude 5-family removed sampling params).
+  temperature: null
+  max_output_tokens: 800
+  max_retries: 2                           # SDK-level retries on transport errors; identical for every arm
+  # Reproducibility: pin the upstream provider and forbid silent fallback. A provider outage then surfaces as an
+  # infra error (rerun up to 2x, reported separately) instead of mixing providers inside one benchmark.
+  openrouter_provider: {order: [anthropic], allow_fallbacks: false, require_parameters: true}
+  app_title: invoice-agent-bench
+  # Re-pilot 2026-11-12: forced tool_choice (function_calling) was rejected by the pinned endpoint -> use response_format.
+  structured_output_method: json_schema
+  # Thinking is adaptive and ON by default for Haiku 5.5; disabled for both arms (option B) so reasoning depth is not a
+  # hidden variable that scales with the number of model calls.
+  # Probe 2026-11-12: {enabled: false} still produced ~200 reasoning tokens/call; {effort: "none"} produced 0.
+  reasoning: {effort: "none"}
+  verify_before_pilot: [tool_calling, structured_output, temperature_supported, served_provider, cost_reported]
