@@ -1,7 +1,7 @@
 # invoice-agent-bench
 
 **Building and benchmarking a production-ready enterprise AI agent.**
-Companion repository for the article *"Your AI Agent Works in a Demo. But Can You Trust It in Production?"* *[blog link to be added]*.
+Companion repository for the article *"Your AI Agent Works in a Demo. But Can You Trust It in Production?"* *https://dev.to/yogesh_dhome_9e0ea9a27ea5/your-ai-agent-works-in-a-demo-but-can-you-trust-it-in-production-4jag*.
 
 Three versions of the same synthetic **Enterprise Invoice Operations Assistant** are run against the same 100 scenarios,
 three times each:
