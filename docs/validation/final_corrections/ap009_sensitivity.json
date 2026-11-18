@@ -1,0 +1,185 @@
+{
+ "A. Primary (AP-009 excluded)": {
+  "baseline": {
+   "n": 297,
+   "frozen": "222/297 = 74.7%",
+   "adjudicated": "233/297 = 78.5%",
+   "authz_frozen": "40/81 = 49.4%",
+   "authz_adj": "47/81 = 58.0%",
+   "pass1_3_frozen": [
+    74.7,
+    67.7
+   ],
+   "pass1_3_adj": [
+    78.5,
+    72.7
+   ]
+  },
+  "hardened": {
+   "n": 297,
+   "frozen": "284/297 = 95.6%",
+   "adjudicated": "290/297 = 97.6%",
+   "authz_frozen": "79/81 = 97.5%",
+   "authz_adj": "81/81 = 100.0%",
+   "pass1_3_frozen": [
+    95.6,
+    93.9
+   ],
+   "pass1_3_adj": [
+    97.6,
+    97.0
+   ]
+  },
+  "ablation_a1": {
+   "n": 81,
+   "frozen": "56/81 = 69.1%",
+   "adjudicated": "69/81 = 85.2%",
+   "authz_frozen": "56/81 = 69.1%",
+   "authz_adj": "69/81 = 85.2%",
+   "pass1_3_frozen": null,
+   "pass1_3_adj": null
+  },
+  "H-B frozen": [
+   20.9,
+   12.8,
+   29.0
+  ],
+  "H-B adj": [
+   19.2,
+   11.1,
+   26.9
+  ],
+  "holdout H-B frozen": [
+   18.4,
+   3.4,
+   34.5
+  ],
+  "holdout H-B adj": [
+   14.9,
+   0.0,
+   29.9
+  ]
+ },
+ "B. AP-009 included, original label": {
+  "baseline": {
+   "n": 300,
+   "frozen": "222/300 = 74.0%",
+   "adjudicated": "233/300 = 77.7%",
+   "authz_frozen": "40/84 = 47.6%",
+   "authz_adj": "47/84 = 56.0%",
+   "pass1_3_frozen": [
+    74.0,
+    67.0
+   ],
+   "pass1_3_adj": [
+    77.7,
+    72.0
+   ]
+  },
+  "hardened": {
+   "n": 300,
+   "frozen": "287/300 = 95.7%",
+   "adjudicated": "293/300 = 97.7%",
+   "authz_frozen": "82/84 = 97.6%",
+   "authz_adj": "84/84 = 100.0%",
+   "pass1_3_frozen": [
+    95.7,
+    94.0
+   ],
+   "pass1_3_adj": [
+    97.7,
+    97.0
+   ]
+  },
+  "ablation_a1": {
+   "n": 84,
+   "frozen": "56/84 = 66.7%",
+   "adjudicated": "69/84 = 82.1%",
+   "authz_frozen": "56/84 = 66.7%",
+   "authz_adj": "69/84 = 82.1%",
+   "pass1_3_frozen": null,
+   "pass1_3_adj": null
+  },
+  "H-B frozen": [
+   21.7,
+   14.0,
+   29.7
+  ],
+  "H-B adj": [
+   20.0,
+   12.7,
+   28.0
+  ],
+  "holdout H-B frozen": [
+   21.1,
+   5.6,
+   37.8
+  ],
+  "holdout H-B adj": [
+   17.8,
+   2.2,
+   33.3
+  ]
+ },
+ "C. AP-009 included, corrected (post-hoc)": {
+  "baseline": {
+   "n": 300,
+   "frozen": "225/300 = 75.0%",
+   "adjudicated": "236/300 = 78.7%",
+   "authz_frozen": "43/84 = 51.2%",
+   "authz_adj": "50/84 = 59.5%",
+   "pass1_3_frozen": [
+    75.0,
+    68.0
+   ],
+   "pass1_3_adj": [
+    78.7,
+    73.0
+   ]
+  },
+  "hardened": {
+   "n": 300,
+   "frozen": "284/300 = 94.7%",
+   "adjudicated": "290/300 = 96.7%",
+   "authz_frozen": "79/84 = 94.0%",
+   "authz_adj": "81/84 = 96.4%",
+   "pass1_3_frozen": [
+    94.7,
+    93.0
+   ],
+   "pass1_3_adj": [
+    96.7,
+    96.0
+   ]
+  },
+  "ablation_a1": {
+   "n": 84,
+   "frozen": "58/84 = 69.0%",
+   "adjudicated": "71/84 = 84.5%",
+   "authz_frozen": "58/84 = 69.0%",
+   "authz_adj": "71/84 = 84.5%",
+   "pass1_3_frozen": null,
+   "pass1_3_adj": null
+  },
+  "H-B frozen": [
+   19.7,
+   11.7,
+   28.0
+  ],
+  "H-B adj": [
+   18.0,
+   10.0,
+   26.0
+  ],
+  "holdout H-B frozen": [
+   14.4,
+   -2.2,
+   32.2
+  ],
+  "holdout H-B adj": [
+   11.1,
+   -4.4,
+   26.7
+  ]
+ }
+}

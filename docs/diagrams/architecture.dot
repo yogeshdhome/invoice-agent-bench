@@ -1,0 +1,21 @@
+digraph G {
+  rankdir=LR; bgcolor="white"; nodesep=0.35; ranksep=0.55;
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, color="#4A5568", fillcolor="#F7FAFC", margin="0.15,0.08"];
+  edge [color="#4A5568", fontname="Helvetica", fontsize=9];
+  user [label="User\n(verified principal)", fillcolor="#EDF2F7"];
+  graph_ [label="LangGraph state machine\n(hardened workflow)", fillcolor="#DBE7FB", color="#2F6FDE", penwidth=1.5];
+  llm [label="LLM via OpenRouter\nintent + explanation only", fillcolor="#FFF5E6", color="#C27C0E"];
+  rules [label="Rule engine\n3-way match · duplicates\nnext action", fillcolor="#E6F4EA", color="#2E7D32"];
+  appr [label="Approval service\naction hash · TTL\nsegregation of duties", fillcolor="#E6F4EA", color="#2E7D32"];
+  tools [label="Tool layer\ncontracts · retries · circuit breaker\nidempotency keys", fillcolor="#E6F4EA", color="#2E7D32"];
+  pol [label="Policy engine\npolicies.yaml", fillcolor="#E6F4EA", color="#2E7D32"];
+  svc [label="AP / ERP services\n(scoped to the user's token)", fillcolor="#EDF2F7"];
+  ck [label="Checkpointer\n(in-memory in benchmark)", shape=cylinder, fillcolor="#EDF2F7"];
+  audit [label="Audit log + traces", shape=cylinder, fillcolor="#EDF2F7"];
+  user -> graph_ [label="request"];
+  graph_ -> llm [label="propose", style=dashed];
+  graph_ -> rules; graph_ -> appr; graph_ -> tools;
+  tools -> pol [label="decide"]; tools -> svc [label="as the user"];
+  graph_ -> ck [dir=both]; graph_ -> audit;
+  {rank=same; llm; rules; appr}
+}

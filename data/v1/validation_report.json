@@ -1,0 +1,7 @@
+{
+  "ok": true,
+  "errors": [],
+  "scenarios": 100,
+  "pre_payment_invoices_checked": 263,
+  "open_ended_fixture_invoices": 6
+}

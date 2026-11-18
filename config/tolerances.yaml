@@ -1,0 +1,5 @@
+# Synthetic 3-way-match policy (not a real company policy)
+max_price_variance_pct: "2.00"        # per line, inclusive
+max_price_variance_amount: "50.00"    # per line, inclusive
+po_overrun_pct: "10.00"               # PO_EXHAUSTED if consumed + invoice > total * (1 + overrun)
+duplicate_window_days: 7

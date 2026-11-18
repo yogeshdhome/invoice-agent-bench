@@ -1,0 +1,40 @@
+{
+  "files": {
+    "scenarios_dev.jsonl": "25ad9d03529ad46822200910aff2365bbde6d08111fad4b9a8b80c03051c4f13",
+    "scenarios_holdout.jsonl": "6910f789cc94c98714ed2e4e20a8d12946ef391c7cbe5b17eb37a49becf87778"
+  },
+  "generator_version": "1.2.0",
+  "row_counts": {
+    "business_units": 6,
+    "goods_receipts": 467,
+    "gr_lines": 1062,
+    "holds": 63,
+    "invoice_lines": 1031,
+    "invoices": 917,
+    "payments": 654,
+    "po_lines": 1201,
+    "purchase_orders": 502,
+    "tenants": 3,
+    "users": 24,
+    "vendors": 60
+  },
+  "scenario_counts": {
+    "access_violation": 10,
+    "ambiguous": 6,
+    "amount_mismatch": 14,
+    "approval_write": 10,
+    "duplicate": 8,
+    "normal": 12,
+    "open_ended": 3,
+    "payment_status": 10,
+    "po_issue": 10,
+    "prompt_injection": 8,
+    "tool_failure": 9
+  },
+  "seed": 20261111,
+  "split_counts": {
+    "dev": 70,
+    "holdout": 30
+  },
+  "world_dump_sha256": "48b5e59f8a617dfe578824381aa2ebd6c88419420d54496b51f3eaaf31ddd10d"
+}
